@@ -3813,7 +3813,10 @@
           var trackChildren = spec.slideCount + 2 * spec.slidesToShow;
 
           if (!spec.vertical) {
-            trackWidth = getTotalSlides(spec) * spec.slideWidth;
+            trackWidth =
+              spec.slideCount > spec.slidesToShow
+                ? getTotalSlides(spec) * spec.slideWidth
+                : spec.listWidth;
           } else {
             trackHeight = trackChildren * spec.slideHeight;
           }
@@ -4462,7 +4465,11 @@
                 )
               ); // if slide needs to be precloned or postcloned
 
-              if (spec.infinite && spec.fade === false) {
+              if (
+                spec.infinite &&
+                spec.fade === false &&
+                childrenCount > spec.slidesToShow
+              ) {
                 var preCloneNo = childrenCount - index;
 
                 if (
@@ -4517,7 +4524,7 @@
                   );
                 }
 
-                if (childrenCount !== spec.slidesToShow) {
+                if (childrenCount > spec.slidesToShow) {
                   key = childrenCount + index;
 
                   if (key < endIndex) {
