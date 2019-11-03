@@ -262,6 +262,7 @@ export class InnerSlider extends React.Component {
         width: trackWidth + "px",
         left: -trackLeft + "px"
       };
+
       if (this.props.centerMode) {
         let currentWidth = `${childrenWidths[this.state.currentSlide]}px`;
         trackStyle.left = `calc(${trackStyle.left} + (100% - ${currentWidth}) / 2 ) `;
@@ -709,13 +710,14 @@ export class InnerSlider extends React.Component {
     let innerSliderProps = {
       className: className,
       dir: "ltr",
-      style:this.props.style
+      style: this.props.style
     };
 
     if (this.props.unslick) {
       listProps = { className: "slick-list" };
       innerSliderProps = { className };
     }
+
     return (
       <div {...innerSliderProps}>
         {!this.props.unslick ? prevArrow : ""}

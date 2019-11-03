@@ -134,7 +134,11 @@ const renderSlides = spec => {
     );
 
     // if slide needs to be precloned or postcloned
-    if (spec.infinite && spec.fade === false) {
+    if (
+      spec.infinite &&
+      spec.fade === false &&
+      childrenCount > spec.slidesToShow
+    ) {
       let preCloneNo = childrenCount - index;
       if (
         preCloneNo <= getPreClones(spec) &&
@@ -163,7 +167,7 @@ const renderSlides = spec => {
         );
       }
 
-      if (childrenCount !== spec.slidesToShow) {
+      if (childrenCount > spec.slidesToShow) {
         key = childrenCount + index;
         if (key < endIndex) {
           child = elem;
