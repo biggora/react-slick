@@ -110,15 +110,6 @@
       "git add"
     ]
   },
-  "npmName": "react-slick",
-  "npmFileMap": [
-    {
-      "basePath": "/dist/",
-      "files": [
-        "*.js"
-      ]
-    }
-  ],
   "husky": {
     "hooks": {
       "pre-commit": "npm run precommit"
