@@ -119,6 +119,12 @@
       ]
     }
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit",
+      "pre-push": "npm test"
+    }
+  },
   "bugs": {
     "url": "https://github.com/akiran/react-slick/issues"
   },
