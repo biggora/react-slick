@@ -11,12 +11,12 @@
   "scripts": {
     "start": "gulp server",
     "build": "babel ./src --out-dir ./lib && gulp dist",
-    "prepare": "gulp clean && gulp sass && gulp copy && webpack",
+    "prepare:pack": "gulp clean && gulp sass && gulp copy && webpack",
     "test": "npm run lint && jest",
     "test:watch": "jest --watch",
     "lint": "eslint src --fix",
     "gen": "node examples/scripts/generateExampleConfigs.js && node examples/scripts/generateExamples.js && xdg-open docs/jquery.html",
-    "precommit": "npm run lint && npm run prepare && npm run build && git add ."
+    "precommit": "npm run lint && npm run prepare:pack && npm run build && git add ."
   },
   "author": "Kiran Abburi",
   "license": "MIT",
