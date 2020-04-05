@@ -553,6 +553,7 @@ export const getSlideCount = spec => {
 };
 
 export const checkSpecKeys = (spec, keysArray) =>
+  // eslint-disable-next-line no-prototype-builtins
   keysArray.reduce((value, key) => value && spec.hasOwnProperty(key), true)
     ? null
     : console.error("Keys Missing:", spec);

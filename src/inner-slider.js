@@ -136,6 +136,7 @@ export class InnerSlider extends React.Component {
     };
     let setTrackStyle = false;
     for (let key of Object.keys(this.props)) {
+      // eslint-disable-next-line no-prototype-builtins
       if (!nextProps.hasOwnProperty(key)) {
         setTrackStyle = true;
         break;
