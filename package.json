@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "start": "gulp server",
-    "build": "",
+    "build": "gulp build",
     "build:pack": "babel ./src --out-dir ./lib && gulp dist",
     "prepare:pack": "gulp clean && gulp sass && gulp copy && webpack",
     "test": "npm run lint && jest",

@@ -127,4 +127,8 @@ gulp.task(
     })
 );
 
+gulp.task("build", function () {
+    return true;
+});
+
 gulp.task("default", gulp.series(["watch", "server"]));
