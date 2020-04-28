@@ -73,7 +73,7 @@ gulp.task(
             stats: {
                 colors: true
             }
-        }).listen(DEV_PORT, "localhost", function (err, result) {
+        }).listen(DEV_PORT, "localhost", function (err/*, result*/) {
             if (err) {
                 console.log(err);
             } else {
@@ -95,7 +95,7 @@ gulp.task("dist-unmin", function (cb) {
     var unminConfig = assign({}, distConfig);
     unminConfig.output.filename = "react-slick.js";
     unminConfig.mode = "none";
-    return webpack(unminConfig, function (err, stat) {
+    return webpack(unminConfig, function (err/*, stat*/) {
         if (err) console.error(err);
         cb();
     });
@@ -114,7 +114,7 @@ gulp.task("dist-min", function (cb) {
             }
         })
     );
-    return webpack(minConfig, function (err, stat) {
+    return webpack(minConfig, function (err/*, stat*/) {
         if (err) console.error(err);
         cb();
     });
@@ -127,8 +127,8 @@ gulp.task(
     })
 );
 
-gulp.task("build", function () {
-    return true;
+gulp.task("build", function (done) {
+    return done();
 });
 
 gulp.task("default", gulp.series(["watch", "server"]));
